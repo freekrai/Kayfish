@@ -28,6 +28,15 @@ Helper functions:
 -	get_option($key = '')
 -	set_usermeta($uid,$key,$val)
 -	get_usermeta($uid,$key = '')
+-	passhash($str)
+-	login($username,$password)
+-	admin_login($username,$password)
+-	currentuser()
+-	is_logged_in()
+-	is_admin()
+
+Post Functions:
+---------------
 -	insert_post($arr)
 -	update_post($id,$arr)
 -	query_posts($arr)
@@ -39,11 +48,7 @@ Helper functions:
 -	insert_taxonomy($term_id,$taxonomy,$description,$parent,$count)
 -	update_taxonomy($id,$term_id,$taxonomy,$description,$parent,$count)
 -	insert_relationship($term_id,$object_id)
--	login($username,$password)
--	admin_login($username,$password)
--	currentuser()
--	is_logged_in()
--	is_admin()
+
 
 Queries:
 --------
@@ -60,12 +65,15 @@ Queries:
 	-	get_var($query=null,$x=0,$y=0)
 	-	get_row($query=null,$output=OBJECT,$y=0)
 	-	get_results($query=null, $output = OBJECT)
+	-	get_col( $query )
 	-	_weak_escape( $string )
 	-	_real_escape( $string )
 	-	_escape( $data )
 	-	escape( $data )
 	-	escape_by_ref( &$string )
 	-	escape_deep( $array )
+	-	tables( $scope )
+		-	returns an array list of default tables in db
 -	mysql_get_var($query,$x=0,$y=0)
 	-	returns a single variable
 -	mysql_get_results($query)
@@ -74,8 +82,10 @@ Queries:
 	-	calls a query and doesn't return results
 -	escape($str = '')
 	-	escapes a string
--	function cleanLike($q)
+-	cleanLike($q)
 	-	cleans a query for.
+-	dbDelta( $queries, $execute = true )
+	-	Given an array of queries, performs checks to see if current DB matches what is specified and performs updates if needed
 	
 Logging:
 ---------

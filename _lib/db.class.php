@@ -12,6 +12,9 @@ class kfdb {
 	private $rows_affected;
 	private $col_info = array();
 	private $insert_id;
+	private $tables = array( 'posts', 'settings', 'postmeta','terms', 'term_taxonomy', 'term_relationships');
+	private $global_tables = array( 'users', 'usermeta' );
+	
 	public function __construct($host,$user,$pass,$db) {
 		$this->conn = mysql_connect($host, $user, $pass) or die("Couldn't connection to $host");
 		mysql_select_db($db,$this->conn);
@@ -134,6 +137,14 @@ class kfdb {
 			}
 		}
 	}
+	public function get_col($query){
+		if ( $query )	$this->query( $query );
+		$new_array = array();
+		for ( $i = 0, $j = count( $this->last_result ); $i < $j; $i++ ) {
+			$new_array[$i] = $this->get_var( null, $x, $i );
+		}
+		return $new_array;		
+	}
 	public function _weak_escape( $string ){
 		return addslashes( $string );
 	}
@@ -178,6 +189,30 @@ class kfdb {
 	public function escape_deep( $array ){
 		return $this->_escape( $array );
 	}
+	public function tables( $scope = 'all') {
+		switch ( $scope ) {
+			case 'all' :
+				$tables = array_merge( $this->global_tables, $this->tables );
+				break;
+			case 'notall' :
+				$tables = $this->tables;
+				break;
+			case 'global' :
+				$tables = $this->global_tables;
+				break;
+			default :
+				return array();
+				break;
+		}
+		foreach ( $tables as $k => $table ) {
+			if ( in_array( $table, $global_tables ) )
+				$tables[ $table ] = $table;
+			else
+				$tables[ $table ] = $table;
+			unset( $tables[ $k ] );
+		}
+		return $tables;	
+	}
 }
 function mysql_get_var($query,$x=0,$y=0){
 	global $kfdb;
@@ -210,4 +245,139 @@ function stripslashes_deep($value){
 function cleanLike($q) {
 	$text = str_replace('_', '%', clean_url(trim($q)));
 	return '%'.$text.'%';
+}
+function dbDelta($queries, $execute = true) {
+	global $kfdb;
+	if ( !is_array($queries) ) {
+		$queries = explode( ';', $queries );
+		if ('' == $queries[count($queries) - 1]) array_pop($queries);
+	}
+	$cqueries = array(); // Creation Queries
+	$iqueries = array(); // Insertion Queries
+	$for_update = array();
+	foreach($queries as $qry) {
+		if (preg_match("|CREATE TABLE ([^ ]*)|", $qry, $matches)) {
+			$cqueries[trim( strtolower($matches[1]), '`' )] = $qry;
+			$for_update[$matches[1]] = 'Created table '.$matches[1];
+		} else if (preg_match("|CREATE DATABASE ([^ ]*)|", $qry, $matches)) {
+			array_unshift($cqueries, $qry);
+		} else if (preg_match("|INSERT INTO ([^ ]*)|", $qry, $matches)) {
+			$iqueries[] = $qry;
+		} else if (preg_match("|UPDATE ([^ ]*)|", $qry, $matches)) {
+			$iqueries[] = $qry;
+		} else {
+			// Unrecognized query type
+		}
+	}
+	if ($tables = $kfdb->get_col('SHOW TABLES;')) {
+		foreach ($tables as $table) {
+			if ( in_array($table, $kfdb->tables('global')) )	continue;
+			if ( array_key_exists(strtolower($table), $cqueries) ) {
+				$cfields = $indices = array();
+				preg_match("|\((.*)\)|ms", $cqueries[strtolower($table)], $match2);
+				$qryline = trim($match2[1]);
+				$flds = explode("\n", $qryline);
+				//echo "<hr/><pre>\n".print_r(strtolower($table), true).":\n".print_r($cqueries, true)."</pre><hr/>";
+				foreach ($flds as $fld) {
+					preg_match("|^([^ ]*)|", trim($fld), $fvals);
+					$fieldname = trim( $fvals[1], '`' );
+					$validfield = true;
+					switch (strtolower($fieldname)) {
+					case '':
+					case 'primary':
+					case 'index':
+					case 'fulltext':
+					case 'unique':
+					case 'key':
+						$validfield = false;
+						$indices[] = trim(trim($fld), ", \n");
+						break;
+					}
+					$fld = trim($fld);
+					if ($validfield) {
+						$cfields[strtolower($fieldname)] = trim($fld, ", \n");
+					}
+				}
+				$tablefields = $kfdb->get_results("DESCRIBE {$table};");
+				foreach ($tablefields as $tablefield) {
+					if (array_key_exists(strtolower($tablefield->Field), $cfields)) {
+						preg_match("|".$tablefield->Field." ([^ ]*( unsigned)?)|i", $cfields[strtolower($tablefield->Field)], $matches);
+						$fieldtype = $matches[1];
+						if ($tablefield->Type != $fieldtype) {
+							$cqueries[] = "ALTER TABLE {$table} CHANGE COLUMN {$tablefield->Field} " . $cfields[strtolower($tablefield->Field)];
+							$for_update[$table.'.'.$tablefield->Field] = "Changed type of {$table}.{$tablefield->Field} from {$tablefield->Type} to {$fieldtype}";
+						}
+						//echo "{$cfields[strtolower($tablefield->Field)]}<br>";
+						if (preg_match("| DEFAULT '(.*)'|i", $cfields[strtolower($tablefield->Field)], $matches)) {
+							$default_value = $matches[1];
+							if ($tablefield->Default != $default_value) {
+								$cqueries[] = "ALTER TABLE {$table} ALTER COLUMN {$tablefield->Field} SET DEFAULT '{$default_value}'";
+								$for_update[$table.'.'.$tablefield->Field] = "Changed default value of {$table}.{$tablefield->Field} from {$tablefield->Default} to {$default_value}";
+							}
+						}
+						unset($cfields[strtolower($tablefield->Field)]);
+					} else {
+						// This field exists in the table, but not in the creation queries?
+					}
+				}
+				foreach ($cfields as $fieldname => $fielddef) {
+					$cqueries[] = "ALTER TABLE {$table} ADD COLUMN $fielddef";
+					$for_update[$table.'.'.$fieldname] = 'Added column '.$table.'.'.$fieldname;
+				}
+				$tableindices = $kfdb->get_results("SHOW INDEX FROM {$table};");
+				if ($tableindices) {
+					unset($index_ary);
+					foreach ($tableindices as $tableindex) {
+						$keyname = $tableindex->Key_name;
+						$index_ary[$keyname]['columns'][] = array('fieldname' => $tableindex->Column_name, 'subpart' => $tableindex->Sub_part);
+						$index_ary[$keyname]['unique'] = ($tableindex->Non_unique == 0)?true:false;
+					}
+					foreach ($index_ary as $index_name => $index_data) {
+						$index_string = '';
+						if ($index_name == 'PRIMARY') {
+							$index_string .= 'PRIMARY ';
+						} else if($index_data['unique']) {
+							$index_string .= 'UNIQUE ';
+						}
+						$index_string .= 'KEY ';
+						if ($index_name != 'PRIMARY') {
+							$index_string .= $index_name;
+						}
+						$index_columns = '';
+						foreach ($index_data['columns'] as $column_data) {
+							if ($index_columns != '') $index_columns .= ',';
+							$index_columns .= $column_data['fieldname'];
+							if ($column_data['subpart'] != '') {
+								$index_columns .= '('.$column_data['subpart'].')';
+							}
+						}
+						$index_string .= ' ('.$index_columns.')';
+						if (!(($aindex = array_search($index_string, $indices)) === false)) {
+							unset($indices[$aindex]);
+							//echo "<pre style=\"border:1px solid #ccc;margin-top:5px;\">{$table}:<br />Found index:".$index_string."</pre>\n";
+						}else{
+							//echo "<pre style=\"border:1px solid #ccc;margin-top:5px;\">{$table}:<br /><b>Did not find index:</b>".$index_string."<br />".print_r($indices, true)."</pre>\n";
+						}
+					}
+				}
+				foreach ( (array) $indices as $index ) {
+					$cqueries[] = "ALTER TABLE {$table} ADD $index";
+					$for_update[$table.'.'.$fieldname] = 'Added index '.$table.' '.$index;
+				}
+				unset($cqueries[strtolower($table)]);
+				unset($for_update[strtolower($table)]);
+			} else {
+				// This table exists in the database, but not in the creation queries?
+			}
+		}
+	}
+	$allqueries = array_merge($cqueries, $iqueries);
+	if ($execute) {
+		foreach ($allqueries as $query) {
+			//echo "<pre style=\"border:1px solid #ccc;margin-top:5px;\">".print_r($query, true)."</pre>\n";
+			$kfdb->query($query);
+		}
+	}
+
+	return $for_update;
 }
