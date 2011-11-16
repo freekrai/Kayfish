@@ -16,6 +16,20 @@ function get_user_details($uid){
 	return $user;
 }
 
+function get_currentuserinfo(){
+	global $user_ID,$current_user;
+	if (!is_logged_in()){
+		$user_ID = "";
+		$current_user = "";
+		return false;
+	}
+	if( empty($current_user) ){
+		$u = currentuser();
+		$user_ID = $u->ID;
+		$current_user = $u;
+	}
+}
+
 function currentuser() {
 	if (!is_logged_in()) return false;
 	static $user;
