@@ -387,6 +387,12 @@ function make_link($options = array()) {
 function remove_leading_slash($str = '') {
 	return preg_replace('#^/#', '', $str);
 }
+function get_page_info($key = '') {
+	global $pageInfo;	
+	if (array_key_exists($key, $pageInfo)) return $pageInfo[$key];
+	else return false;
+}
+
 function set_page_info($key = '', $value = '') {
 	global $pageInfo;
 	return $pageInfo[$key] = $value;
