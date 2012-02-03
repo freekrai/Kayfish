@@ -9,9 +9,9 @@
 	<!--[if lt IE 9]>
 	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
-	<link href="/assets/bootstrap.css" rel="stylesheet">
-	<link href="/assets/core.css" rel="stylesheet">
-	<link href="/assets/bootstrap-responsive.css" rel="stylesheet">
+	<link href="/assets/css/bootstrap.css" rel="stylesheet">
+	<link href="/assets/css/core.css" rel="stylesheet">
+	<link href="/assets/css/bootstrap-responsive.css" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 	<script src="http://autobahn.tablesorter.com/jquery.tablesorter.min.js"></script>
 	<script src="/assets/js/bootstrap.js"></script>
