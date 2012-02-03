@@ -11,40 +11,64 @@
 	<![endif]-->
 	<link href="/assets/bootstrap.css" rel="stylesheet">
 	<link href="/assets/core.css" rel="stylesheet">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+	<link href="/assets/bootstrap-responsive.css" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 	<script src="http://autobahn.tablesorter.com/jquery.tablesorter.min.js"></script>
-	<script src="/assets/js/bootstrap-dropdown.js"></script>
-	<script src="/assets/js/bootstrap-twipsy.js"></script>
-	<script src="/assets/js/bootstrap-scrollspy.js"></script>
+	<script src="/assets/js/bootstrap.js"></script>
 	<script src="/assets/js/app.js"></script>
 	<link rel="shortcut icon" href="/assets/images/favicon.ico">
 	<link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
 	<link rel="apple-touch-icon" sizes="72x72" href="/assets/images/apple-touch-icon-72x72.png">
 	<link rel="apple-touch-icon" sizes="114x114" href="/assets/images/apple-touch-icon-114x114.png">
 </head>
-<body>
+ <body data-spy="scroll" data-target=".subnav" data-offset="50">
 <header>
-    <div class="topbar">
-      <div class="fill">
-        <div class="container">
-          <a class="brand" href="/"><?php echo $config['base_title']; ?></a>
-          <ul class="nav">
-            <li class="active"><a href="/">Home</a></li>
-            <li><a href="/signup">Signup</a></li>
-          </ul>
-<?php	if( is_logged_in() ){	?>
-		<ul class="nav secondary-nav">
-			<li><a href="/logout">Logout</a></li>
-		</ul>
-<?php	}else{	?>          
-          <form action="/login" class="pull-right">
-            <input class="input-small" type="text" placeholder="Username" name="username">
-            <input class="input-small" type="password" placeholder="Password" name="pass">
-            <button class="btn" type="submit">Sign in</button>
-          </form>
-<?php	}	?>
-        </div>
-      </div>
-    </div>
+	<div class="navbar navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container">
+				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</a>
+				<a class="brand" href="/"><?php echo $config['base_title']; ?></a>
+				<div class="nav-collapse">
+					<ul class="nav">
+						<li class="active"><a href="#">Home</a></li>
+						<li><a href="#">Link</a></li>
+						<li><a href="#">Link</a></li>
+						<li><a href="#">Link</a></li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li><a href="#">Action</a></li>
+								<li><a href="#">Another action</a></li>
+								<li><a href="#">Something else here</a></li>
+								<li class="divider"></li>
+								<li><a href="#">Separated link</a></li>
+							</ul>
+						</li>
+					</ul>
+					<form class="navbar-search pull-left" action="">
+						<input type="text" class="search-query span2" placeholder="Search">
+					</form>
+					<ul class="nav pull-right">
+						<li><a href="#">Link</a></li>
+						<li class="divider-vertical"></li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li><a href="#">Action</a></li>
+								<li><a href="#">Another action</a></li>
+								<li><a href="#">Something else here</a></li>
+								<li class="divider"></li>
+								<li><a href="#">Separated link</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div><!-- /.nav-collapse -->
+			</div>
+		</div><!-- /navbar-inner -->
+	</div>
 </header>
 <section>

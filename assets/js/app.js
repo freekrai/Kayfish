@@ -17,6 +17,7 @@ $(document).ready(function(){
 		setTimeout(function () { $(el).select(); }, 1);
 	});
 	$(window).bind( 'load resize', function () {
+/*
 		$('body > .topbar').scrollSpy()
 		$(".twipsies a").each(function () {
  			$(this)
@@ -28,6 +29,7 @@ $(document).ready(function(){
 				})
 				.twipsy('show')
 		})
+*/
 	})
 	$('*.hasPlaceHolder').focus(function()	{
 		if( $(this).hasClass('placeHolder')){
