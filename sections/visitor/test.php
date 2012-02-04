@@ -1,3 +1,28 @@
+<style>
+.the-icons {
+  margin-bottom: 18px;
+}
+.the-icons i {
+  display: block;
+  margin-bottom: 5px;
+}
+.the-icons i:hover {
+  background-color: rgba(255,0,0,.25);
+}
+.the-icons i:after {
+  display: block;
+  content: attr(class);
+  font-style: normal;
+  margin-left: 20px;
+  width: 140px;
+}
+#javascript input[type=checkbox] {
+  position: relative;
+  top: -1px;
+  display: inline;
+  margin-left: 6px;
+}
+</style>
    <div class="container">
 
 <!-- Masthead
