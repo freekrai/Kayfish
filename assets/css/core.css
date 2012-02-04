@@ -1,236 +1,270 @@
-      body {
-        padding-top: 60px;
-        padding-bottom: 40px;
-      }
       .sidebar-nav {
         padding: 9px 0;
       }
-/*
-      html, body {
-        background-color: #eee;
-      }
-      body {
-        padding-top: 60px;
-      }
-      .container > footer p {
-        text-align: center;
-      }
-      .container {
-        width: 960px;
-      }
-      .container > .content {
-        background-color: #fff;
-        padding: 20px;
-        margin: 0 -20px;
-        -webkit-border-radius: 0 0 6px 6px;
-           -moz-border-radius: 0 0 6px 6px;
-                border-radius: 0 0 6px 6px;
-        -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15);
-           -moz-box-shadow: 0 1px 2px rgba(0,0,0,.15);
-                box-shadow: 0 1px 2px rgba(0,0,0,.15);
-      }
-      .page-header {
-        background-color: #f5f5f5;
-        padding: 20px 20px 10px;
-        margin: -20px -20px 20px;
-      }
-      .content .span4 {
-        margin-left: 0;
-        padding-left: 19px;
-        border-left: 1px solid #eee;
-      }
-      .topbar .btn {
-        border: 0;
-      }
-div.flashMessage{ display: block; padding: 5px 10px; border: 1px #72bc2c solid; margin-top: 10px; color: #234a00; background-color: #d0f0b2; margin-bottom:10px;}
-	div.flashMessage p{ text-align: center; margin: 0; }
-	div.flashMessage.error{ border: 1px #bc302c solid; color: #8a0000; background-color: #f0b3b2; }
-	
-div.flashMessage{ display: block; padding: 5px 10px; border: 1px #72bc2c solid; margin-top: 10px; color: #234a00; background-color: #d0f0b2; margin-bottom:10px;}
-	div.flashMessage p{ text-align: center; margin: 0; }
-	div.flashMessage.error{ border: 1px #bc302c solid; color: #8a0000; background-color: #f0b3b2; }
-.placeHolder{ color: #94989b; }
-	span.placeHolderValue{ display: none; }
-input[required], input.required{ background: #fff url(/assets/images/inputField-requiredSubtle.png ) no-repeat right center !important; }
-	input.error[required], input.required.error{ background: #fbe6e8 url( /assets/images/inputField-requiredMissing.png ) no-repeat right 		center !important; border: 2px #ce0000 solid; }
 
-.greenGradient 			{	
-		border-top:solid 2px #c9dc3c;
-		border-bottom: solid 2px #5e9615;
-		background-image: -webkit-gradient(    linear,    left bottom,    left top,    color-stop(1, rgb(179,205,49)),    color-stop(0, rgb(122,169,28)));
-		background-image: -moz-linear-gradient(    center bottom,    rgb(179,205,49) 100%,    rgb(122,169,28) 0%);		
+body {
+  position: relative;
+	padding-bottom: 40px;
+  padding-top: 40px;
+  background-color: #fff;
+  background-repeat: repeat-x;
+  background-position: 0 40px;
 }
 
-.greenGradient:hover	{	
-		border-top:solid 2px #c9dc3c;
-		border-bottom: solid 2px #5e9615;
-		background-image: -webkit-gradient(    linear,    left bottom,    left top,    color-stop(0, rgb(179,205,49)),    color-stop(1, rgb(122,169,28)));
-		background-image: -moz-linear-gradient(    center bottom,    rgb(179,205,49) 0%,    rgb(122,169,28) 100%);		
+
+.navbar-fixed-top .brand {
+  padding-right: 0;
+  padding-left: 0;
+  margin-right: 20px;
+  float: left;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 0 1px 0 rgba(255,255,255,.1), 0 0 30px rgba(255,255,255,.125);
+  -webkit-transition: all .2s linear;
+     -moz-transition: all .2s linear;
+          transition: all .2s linear;
+}
+.navbar-fixed-top .brand:hover {
+  text-decoration: none;
 }
 
-.yellowGradient 		{		
-		border-top:solid 2px #f3da00;
-		border-bottom: solid 2px #dc9100;
-		background-image: -webkit-gradient(    linear,    left bottom,    left top,    color-stop(1, rgb(239,203,0)),    color-stop(0, rgb(227,163,0)));
-		background-image: -moz-linear-gradient(    center bottom,    rgb(239,203,0) 100%,    rgb(227,163,0) 0%);		
+section {
+  padding-top: 60px;
 }
 
-.yellowGradient:hover	{		
-		border-top:solid 2px #f3da00;
-		border-bottom: solid 2px #dc9100;
-		background-image: -webkit-gradient(    linear,    left bottom,    left top,    color-stop(0, rgb(239,203,0)),    color-stop(1, rgb(227,163,0)));
-		background-image: -moz-linear-gradient(    center bottom,    rgb(239,203,0) 0%,    rgb(227,163,0) 100%);		
+hr.soften {
+  height: 1px;
+  margin: 54px 0;
+  background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,.1), rgba(0,0,0,0));
+  background-image:    -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,.1), rgba(0,0,0,0));
+  background-image:     -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,.1), rgba(0,0,0,0));
+  background-image:      -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,.1), rgba(0,0,0,0));
+  border: 0;
 }
 
-.redGradient 			{
-		border-top:solid 2px #eead70;
-		border-bottom: solid 2px #cd3b26;
-		background-image: -webkit-gradient(    linear,    left bottom,    left top,    color-stop(1, rgb(231,140,91)),    color-stop(0, rgb(214,82,53)));
-		background-image: -moz-linear-gradient(    center bottom,    rgb(231,140,91) 100%,    rgb(214,82,53) 0%);		
+
+/* Jumbotrons
+-------------------------------------------------- */
+.jumbotron {
+  position: relative;
+}
+.jumbotron h1 {
+  margin-bottom: 9px;
+  font-size: 81px;
+  letter-spacing: -1px;
+  line-height: 1;
+}
+.jumbotron p {
+  margin-bottom: 18px;
+  font-weight: 300;
+}
+.jumbotron .btn-large {
+  font-size: 20px;
+  font-weight: normal;
+  padding: 14px 24px;
+  margin-right: 10px;
+  -webkit-border-radius: 6px;
+     -moz-border-radius: 6px;
+          border-radius: 6px;
 }
 
-.redGradient:hover 			{
-		border-top:solid 2px #eead70;
-		border-bottom: solid 2px #cd3b26;
-		background-image: -webkit-gradient(    linear,    left bottom,    left top,    color-stop(0, rgb(231,140,91)),    color-stop(1, rgb(214,82,53)));
-		background-image: -moz-linear-gradient(    center bottom,    rgb(231,140,91) 0%,    rgb(214,82,53) 100%);		
+/* Masthead (docs home) */
+.masthead {
+  padding-top: 36px;
+  margin-bottom: 72px;
+}
+.masthead h1,
+.masthead p {
+  text-align: center;
+}
+.masthead h1 {
+  margin-bottom: 18px;
+}
+.masthead p {
+  margin-left: 5%;
+  margin-right: 5%;
+  font-size: 30px;
+  line-height: 36px;
+}
+.subhead {
+  padding-bottom: 0;
+  margin-bottom: 9px;
+}
+.subhead h1 {
+  font-size: 54px;
 }
 
-.blueGradient 			{
-		border-top:solid 2px #74d9d6;
-		border-bottom: solid 2px #268b81;
-		background-image: -webkit-gradient(    linear,    left bottom,    left top,    color-stop(1, rgb(94,200,196)),    color-stop(0, rgb(55,161,152)));
-		background-image: -moz-linear-gradient(    center bottom,    rgb(94,200,196) 100%,    rgb(55,161,152) 0%);		
+.subnav {
+  width: 100%;
+  height: 36px;
+  background-color: #eeeeee; /* Old browsers */
+  background-repeat: repeat-x; /* Repeat the gradient */
+  background-image: -moz-linear-gradient(top, #f5f5f5 0%, #eeeeee 100%); /* FF3.6+ */
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f5f5f5), color-stop(100%,#eeeeee)); /* Chrome,Safari4+ */
+  background-image: -webkit-linear-gradient(top, #f5f5f5 0%,#eeeeee 100%); /* Chrome 10+,Safari 5.1+ */
+  background-image: -ms-linear-gradient(top, #f5f5f5 0%,#eeeeee 100%); /* IE10+ */
+  background-image: -o-linear-gradient(top, #f5f5f5 0%,#eeeeee 100%); /* Opera 11.10+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f5f5f5', endColorstr='#eeeeee',GradientType=0 ); /* IE6-9 */
+  background-image: linear-gradient(top, #f5f5f5 0%,#eeeeee 100%); /* W3C */
+  border: 1px solid #e5e5e5;
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+}
+.subnav .nav {
+  margin-bottom: 0;
+}
+.subnav .nav > li > a {
+  margin: 0;
+  padding-top:    11px;
+  padding-bottom: 11px;
+  border-left: 1px solid #f5f5f5;
+  border-right: 1px solid #e5e5e5;
+  -webkit-border-radius: 0;
+     -moz-border-radius: 0;
+          border-radius: 0;
+}
+.subnav .nav > .active > a,
+.subnav .nav > .active > a:hover {
+  padding-left: 13px;
+  color: #777;
+  background-color: #e9e9e9;
+  border-right-color: #ddd;
+  border-left: 0;
+  -webkit-box-shadow: inset 0 3px 5px rgba(0,0,0,.05);
+     -moz-box-shadow: inset 0 3px 5px rgba(0,0,0,.05);
+          box-shadow: inset 0 3px 5px rgba(0,0,0,.05);
+}
+.subnav .nav > .active > a .caret,
+.subnav .nav > .active > a:hover .caret {
+  border-top-color: #777;
+}
+.subnav .nav > li:first-child > a,
+.subnav .nav > li:first-child > a:hover {
+  border-left: 0;
+  padding-left: 12px;
+  -webkit-border-radius: 4px 0 0 4px;
+     -moz-border-radius: 4px 0 0 4px;
+          border-radius: 4px 0 0 4px;
+}
+.subnav .nav > li:last-child > a {
+  border-right: 0;
+}
+.subnav .dropdown-menu {
+  -webkit-border-radius: 0 0 4px 4px;
+     -moz-border-radius: 0 0 4px 4px;
+          border-radius: 0 0 4px 4px;
 }
 
-.blueGradient:hover		{
-		border-top:solid 2px #74d9d6;
-		border-bottom: solid 2px #268b81;
-		background-image: -webkit-gradient(    linear,    left bottom,    left top,    color-stop(0, rgb(94,200,196)),    color-stop(1, rgb(55,161,152)));
-		background-image: -moz-linear-gradient(    center bottom,    rgb(94,200,196) 0%,    rgb(55,161,152) 100%);		
-}
-
-.purpleGradient 		{
-		border-top:solid 2px #efc5f9;
-		border-bottom: solid 2px #b02be3;
-		background-image: -webkit-gradient(    linear,    left bottom,    left top,    color-stop(1, rgb(224,169,244)),    color-stop(0, rgb(145,39,216)));
-		background-image: -moz-linear-gradient(    center bottom,    rgb(224,169,244) 100%,    rgb(145,39,216) 0%);		
-}
-
-.purpleGradient:hover 		{
-		border-top:solid 2px #efc5f9;
-		border-bottom: solid 2px #b02be3;
-		background-image: -webkit-gradient(    linear,    left bottom,    left top,    color-stop(0, rgb(224,169,244)),    color-stop(1, rgb(145,39,216)));
-		background-image: -moz-linear-gradient(    center bottom,    rgb(224,169,244) 0%,    rgb(145,39,216) 100%);		
-}
-
-.ribbon {
-	padding: 0 25px;
-	height: 80px;
-	
-	color: #301607;
-	
-	background-color: #c94700;
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#c94700), to(#b84100)); 
-    background-image: -webkit-linear-gradient(top, #c94700, #b84100); 
-    background-image:    -moz-linear-gradient(top, #c94700, #b84100); 
-    background-image:     -ms-linear-gradient(top, #c94700, #b84100); 
-    background-image:      -o-linear-gradient(top, #c94700, #b84100); 
-    background-image:         linear-gradient(top, #c94700, #b84100);
-	
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-        
-	position: relative;
-	float: left;
-	clear: left;
-	
-	font-family: 'Montez', cursive;
-	font-size: 32px;			
-	line-height: 80px;
-	text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.3);
-	
-	-moz-box-shadow:        -7px 7px 0px rgba(0, 0, 0, 0.3); 
-    -webkit-box-shadow:    	-7px 7px 0px rgba(0, 0, 0, 0.3); 
-    box-shadow:             -7px 7px 0px rgba(0, 0, 0, 0.3);
-    
-    border-bottom-right-radius: 20px 5px;
-	}
-	
-.ribbon:after {
-	content: "";	
-	display: block;
-	width: 40px;
-	height: 0px;
-	
-	position: absolute;
+/* Fixed subnav on scroll, but only for 980px and up (sorry IE!) */
+@media (min-width: 980px) {
+  .subnav-fixed {
+    position: fixed;
+    top: 40px;
+    left: 0;
     right: 0;
-    bottom: 4px;
-    z-index: 20;
-	
-	border-bottom: 80px solid #de6625;
-	border-right: 80px solid transparent;
-	
-	-webkit-transform: rotate(90deg);
-    -webkit-transform-origin: right bottom;
-    -moz-transform: rotate(90deg);
-    -moz-transform-origin: right bottom;
-    -o-transform: rotate(90deg);
-    -o-transform-origin: right bottom;
-    -ms-transform: rotate(90deg);
-    -ms-transform-origin: right bottom;
-    transform: rotate(90deg);
-    transform-origin: right bottom;
-	}	
-	
-.ribbon:before {
-	content: "";	
-	display: block;
-	width: 20px;
-	height: 0px;
-	
-	position: absolute;
-    right: 0;
-    bottom: 4px;
-    z-index: 10;
-	
-    border-bottom: 80px solid rgba(0, 0, 0, 0.3);
-	border-right: 80px solid transparent;
-	
-	-webkit-transform: rotate(80deg);
-    -webkit-transform-origin: right bottom;
-    -moz-transform: rotate(80deg);
-    -moz-transform-origin: right bottom;
-    -o-transform: rotate(80deg);
-    -o-transform-origin: right bottom;
-    -ms-transform: rotate(80deg);
-    -ms-transform-origin: right bottom;
-    transform: rotate(80deg);
-    transform-origin: right bottom;
-	}	
-	
-.ribbon#ff-proof:after {	
-	width: 0px;
-	height: 40px;
-	
-	position: absolute;
-    right: -160px;
-	
-	border-left: 80px solid #de6625;
-	border-bottom: 80px solid transparent;
-	
-	-webkit-transform: none;
-    -moz-transform: none;
-    -o-transform: none;
-    -ms-transform: none;
-    transform: none;
-	}
-	
+    z-index: 1030;
+    border-color: #d5d5d5;
+    border-width: 0 0 1px; /* drop the border on the fixed edges */
+    -webkit-border-radius: 0;
+       -moz-border-radius: 0;
+            border-radius: 0;
+    -webkit-box-shadow: inset 0 1px 0 #fff, 0 1px 5px rgba(0,0,0,.1);
+       -moz-box-shadow: inset 0 1px 0 #fff, 0 1px 5px rgba(0,0,0,.1);
+            box-shadow: inset 0 1px 0 #fff, 0 1px 5px rgba(0,0,0,.1);
+  }
+  .subnav-fixed .nav {
+    width: 938px;
+    margin: 0 auto;
+    padding: 0 1px;
+  }
+  .subnav .nav > li:first-child > a,
+  .subnav .nav > li:first-child > a:hover {
+    -webkit-border-radius: 0;
+       -moz-border-radius: 0;
+            border-radius: 0;
+  }
+}
+
+
+/* Quick links
+-------------------------------------------------- */
+.quick-links {
+  min-height: 30px;
+  padding: 5px 20px;
+  margin: 36px 0;
+  list-style: none;
+  text-align: center;
+  overflow: hidden;
+}
+.quick-links li {
+  display: inline;
+  margin: 0 5px;
+  color: #999;
+}
+.quick-links .github-btn,
+.quick-links .tweet-btn,
+.quick-links .follow-btn {
+  position: relative;
+  top: 5px;
+}
+
+
+/* Marketing section of Overview
+-------------------------------------------------- */
+.marketing .row {
+  margin-bottom: 9px;
+}
+.marketing h1 {
+  margin: 36px 0 27px;
+  font-size: 40px;
+  font-weight: 300;
+  text-align: center;
+}
+.marketing h2,
+.marketing h3 {
+  font-weight: 300;
+}
+.marketing h2 {
+  font-size: 22px;
+}
+.marketing p {
+  margin-right: 10px;
+}
+.marketing .bs-icon {
+  float: left;
+  margin: 7px 10px 0 0;
+  opacity: .8;
+}
+.marketing .small-bs-icon {
+  float: left;
+  margin: 4px 5px 0 0;
+}
+
+
+
+/* Footer
+-------------------------------------------------- */
+.footer {
+  margin-top: 45px;
+  padding: 35px 0 36px;
+  border-top: 1px solid #e5e5e5;
+}
+.footer p {
+  margin-bottom: 0;
+  color: #555;
+}
+
+
+
+/* Special grid styles
+-------------------------------------------------- */
 .show-grid {
   margin-top: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 .show-grid [class*="span"] {
-  background: #eee;
+  background-color: #eee;
   text-align: center;
   -webkit-border-radius: 3px;
      -moz-border-radius: 3px;
@@ -248,4 +282,410 @@ input[required], input.required{ background: #fff url(/assets/images/inputField-
 .show-grid .show-grid [class*="span"] {
   background-color: #ccc;
 }
-*/
+
+
+/* Render mini layout previews
+-------------------------------------------------- */
+.mini-layout {
+  border: 1px solid #ddd;
+  -webkit-border-radius: 6px;
+     -moz-border-radius: 6px;
+          border-radius: 6px;
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.075);
+     -moz-box-shadow: 0 1px 2px rgba(0,0,0,.075);
+          box-shadow: 0 1px 2px rgba(0,0,0,.075);
+}
+.mini-layout {
+  height: 240px;
+  margin-bottom: 20px;
+  padding: 9px;
+}
+.mini-layout div {
+  -webkit-border-radius: 3px;
+     -moz-border-radius: 3px;
+          border-radius: 3px;
+}
+.mini-layout .mini-layout-body {
+  background-color: #dceaf4;
+  margin: 0 auto;
+  width: 70%;
+  height: 240px;
+}
+.mini-layout.fluid .mini-layout-sidebar,
+.mini-layout.fluid .mini-layout-header,
+.mini-layout.fluid .mini-layout-body {
+  float: left;
+}
+.mini-layout.fluid .mini-layout-sidebar {
+  background-color: #bbd8e9;
+  width: 20%;
+  height: 240px;
+}
+.mini-layout.fluid .mini-layout-body {
+  width: 77.5%;
+  margin-left: 2.5%;
+}
+
+
+/* Popover docs
+-------------------------------------------------- */
+.popover-well {
+  min-height: 160px;
+}
+.popover-well .popover {
+  display: block;
+}
+.popover-well .popover-wrapper {
+  width: 50%;
+  height: 160px;
+  float: left;
+  margin-left: 55px;
+  position: relative;
+}
+.popover-well .popover-menu-wrapper {
+  height: 80px;
+}
+.large-bird {
+  margin: 5px 0 0 310px;
+  opacity: .1;
+}
+
+
+input[required], input.required{ background: #fff url(/assets/images/inputField-requiredSubtle.png ) no-repeat right center !important; }
+	input.error[required], input.required.error{ background: #fbe6e8 url( /assets/images/inputField-requiredMissing.png ) no-repeat right 		center !important; border: 2px #ce0000 solid; }
+
+
+/* Color swatches on LESS docs page
+-------------------------------------------------- */
+/* Sets the width of the td */
+.swatch-col {
+  width: 30px;
+}
+/* Le swatch */
+.swatch {
+  display: inline-block;
+  width: 30px;
+  height: 20px;
+  margin: -6px 0;
+  -webkit-border-radius: 3px;
+     -moz-border-radius: 3px;
+          border-radius: 3px;
+}
+/* For white swatches, give a border */
+.swatch-bordered {
+  width: 28px;
+  height: 18px;
+  border: 1px solid #eee;
+}
+
+
+/* Misc
+-------------------------------------------------- */
+
+pre.prettyprint {
+  overflow: hidden;
+}
+
+.browser-support {
+  max-width: 100%;
+}
+
+/* Make tables spaced out a bit more */
+h2 + table,
+h3 + table,
+h4 + table,
+h2 + .row {
+  margin-top: 5px;
+}
+
+/* Example sites showcase */
+.example-sites img {
+  max-width: 100%;
+  margin: 0 auto;
+}
+.marketing-byline {
+  margin: -18px 0 27px;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 24px;
+  color: #999;
+  text-align: center;
+}
+
+.scrollspy-example {
+  height: 200px;
+  overflow: auto;
+  position: relative;
+}
+
+/* Remove bottom margin on example forms in wells */
+form.well {
+  padding: 14px;
+}
+
+/* Tighten up spacing */
+.well hr {
+  margin: 18px 0;
+}
+
+/* Fake the :focus state to demo it */
+.focused {
+  border-color: rgba(82,168,236,.8);
+  -webkit-box-shadow: inset 0 1px 3px rgba(0,0,0,.1), 0 0 8px rgba(82,168,236,.6);
+     -moz-box-shadow: inset 0 1px 3px rgba(0,0,0,.1), 0 0 8px rgba(82,168,236,.6);
+          box-shadow: inset 0 1px 3px rgba(0,0,0,.1), 0 0 8px rgba(82,168,236,.6);
+  outline: 0;
+}
+
+/* For input sizes, make them display block */
+.docs-input-sizes select,
+.docs-input-sizes input[type=text] {
+  display: block;
+  margin-bottom: 9px;
+}
+
+/* Icons
+------------------------- */
+.the-icons {
+  margin-bottom: 18px;
+}
+.the-icons i {
+  display: block;
+  margin-bottom: 5px;
+}
+.the-icons i:hover {
+  background-color: rgba(255,0,0,.25);
+}
+.the-icons i:after {
+  display: block;
+  content: attr(class);
+  font-style: normal;
+  margin-left: 20px;
+  width: 140px;
+}
+#javascript input[type=checkbox] {
+  position: relative;
+  top: -1px;
+  display: inline;
+  margin-left: 6px;
+}
+
+/* Eaxmples page
+------------------------- */
+.bootstrap-examples .thumbnail {
+  margin-bottom: 9px;
+  background-color: #fff;
+}
+
+
+/* Responsive Docs
+-------------------------------------------------- */
+@media (max-width: 480px) {
+
+  /* Reduce padding above jumbotron */
+  body {
+    padding-top: 70px;
+  }
+
+  /* Change up some type stuff */
+  h2 {
+    margin-top: 27px;
+  }
+  h2 small {
+    display: block;
+    line-height: 18px;
+  }
+  h3 {
+    margin-top: 18px;
+  }
+
+  /* Adjust the jumbotron */
+  .jumbotron h1,
+  .jumbotron p {
+    text-align: center;
+    margin-right: 0;
+  }
+  .jumbotron h1 {
+    font-size: 45px;
+    margin-right: 0;
+  }
+  .jumbotron p {
+    margin-right: 0;
+    margin-left: 0;
+    font-size: 18px;
+    line-height: 24px;
+  }
+  .jumbotron .btn {
+    display: block;
+    font-size: 18px;
+    padding: 10px 14px;
+    margin: 0 auto 10px;
+  }
+  /* Masthead (home page jumbotron) */
+  .masthead {
+    padding-top: 0;
+  }
+
+  /* Don't space out quick links so much */
+  .quick-links {
+    margin: 40px 0 0;
+  }
+  /* hide the bullets on mobile since our horizontal space is limited */
+  .quick-links .divider {
+    display: none;
+  }
+
+  /* center example sites */
+  .example-sites {
+    margin-left: 0;
+  }
+  .example-sites > li {
+    float: none;
+    display: block;
+    max-width: 280px;
+    margin: 0 auto 18px;
+    text-align: center;
+  }
+  .example-sites .thumbnail > img {
+    max-width: 270px;
+  }
+
+  table code {
+    white-space: normal;
+    word-wrap: break-word;
+    word-break: break-all;
+  }
+
+  /* Modal example */
+  .modal-example .modal {
+    position: relative;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+  }
+
+}
+
+
+@media (max-width: 768px) {
+
+  /* Remove any padding from the body */
+  body {
+    padding-top: 0;
+  }
+
+  /* Jumbotron buttons */
+  .jumbotron .btn {
+    margin-bottom: 10px;
+  }
+
+  /* Subnav */
+  .subnav {
+    position: static;
+    top: auto;
+    z-index: auto;
+    width: auto;
+    height: auto;
+    background: #fff; /* whole background property since we use a background-image for gradient */
+    -webkit-box-shadow: none;
+       -moz-box-shadow: none;
+            box-shadow: none;
+  }
+  .subnav .nav > li {
+    float: none;
+  }
+  .subnav .nav > li > a {
+    border: 0;
+  }
+  .subnav .nav > li + li > a {
+    border-top: 1px solid #e5e5e5;
+  }
+  .subnav .nav > li:first-child > a,
+  .subnav .nav > li:first-child > a:hover {
+      -webkit-border-radius: 4px 4px 0 0;
+         -moz-border-radius: 4px 4px 0 0;
+              border-radius: 4px 4px 0 0;
+  }
+
+  /* Popovers */
+  .large-bird {
+    display: none;
+  }
+  .popover-well .popover-wrapper {
+    margin-left: 0;
+  }
+
+  /* Space out the show-grid examples */
+  .show-grid [class*="span"] {
+    margin-bottom: 5px;
+  }
+
+  /* Unfloat the back to top link in footer */
+  .footer .pull-right {
+    float: none;
+  }
+  .footer p {
+    margin-bottom: 9px;
+  }
+
+}
+
+
+@media (min-width: 480px) and (max-width: 768px) {
+
+  /* Scale down the jumbotron content */
+  .jumbotron h1 {
+    font-size: 54px;
+  }
+  .jumbotron p {
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+}
+
+
+@media (min-width: 768px) and (max-width: 980px) {
+
+  /* Remove any padding from the body */
+  body {
+    padding-top: 0;
+  }
+
+  /* Scale down the jumbotron content */
+  .jumbotron h1 {
+    font-size: 72px;
+  }
+
+}
+
+
+@media (max-width: 980px) {
+
+  /* Unfloat brand */
+  .navbar-fixed-top .brand {
+    float: left;
+    margin-left: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  /* Inline-block quick links for more spacing */
+  .quick-links li {
+    display: inline-block;
+    margin: 5px;
+  }
+
+}
+
+
+/* LARGE DESKTOP SCREENS */
+@media (min-width: 1210px) {
+
+  /* Update subnav container */
+  .subnav-fixed .nav {
+    width: 1168px; /* 2px less to account for left/right borders being removed when in fixed mode */
+  }
+
+}

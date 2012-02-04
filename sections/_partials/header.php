@@ -34,10 +34,11 @@
 				<a class="brand" href="/"><?php echo $config['base_title']; ?></a>
 				<div class="nav-collapse">
 					<ul class="nav">
-						<li class="active"><a href="#">Home</a></li>
-						<li><a href="#">Link</a></li>
-						<li><a href="#">Link</a></li>
-						<li><a href="#">Link</a></li>
+						<li class="active"><a href="/">Home</a></li>
+						<li><a href="/grid">Scaffolding</a></li>
+						<li><a href="/test">Components</a></li>
+						<li><a href="/fluid">Fluid</a></li>
+						<li><a href="/blank">Start</a></li>						
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
 							<ul class="dropdown-menu">

@@ -1,28 +1,3 @@
-<style>
-.show-grid {
-  margin-top: 10px;
-  margin-bottom: 20px;
-}
-.show-grid [class*="span"] {
-  background-color: #eee;
-  text-align: center;
-  -webkit-border-radius: 3px;
-     -moz-border-radius: 3px;
-          border-radius: 3px;
-  min-height: 30px;
-  line-height: 30px;
-}
-.show-grid:hover [class*="span"] {
-  background: #ddd;
-}
-.show-grid .show-grid {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-.show-grid .show-grid [class*="span"] {
-  background-color: #ccc;
-}
-</style>
 <div class="container">
 
       <!-- Masthead
@@ -133,54 +108,6 @@
 <pre class="prettyprint linenums"><ol class="linenums"><li class="L0"><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"row"</span><span class="tag">&gt;</span></li><li class="L1"><span class="pln">  </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"span12"</span><span class="tag">&gt;</span></li><li class="L2"><span class="pln">    Level 1 of column</span></li><li class="L3"><span class="pln">    </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"row"</span><span class="tag">&gt;</span></li><li class="L4"><span class="pln">      </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"span6"</span><span class="tag">&gt;</span><span class="pln">Level 2</span><span class="tag">&lt;/div&gt;</span></li><li class="L5"><span class="pln">      </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"span6"</span><span class="tag">&gt;</span><span class="pln">Level 2</span><span class="tag">&lt;/div&gt;</span></li><li class="L6"><span class="pln">    </span><span class="tag">&lt;/div&gt;</span></li><li class="L7"><span class="pln">  </span><span class="tag">&lt;/div&gt;</span></li><li class="L8"><span class="tag">&lt;/div&gt;</span></li></ol></pre>
     </div>
   </div>
-
-  <h2>Grid customization</h2>
-  <table class="table table-bordered table-striped">
-    <thead>
-      <tr>
-        <th>Variable</th>
-        <th>Default value</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>@gridColumns</code></td>
-        <td>12</td>
-        <td>Number of columns</td>
-      </tr>
-      <tr>
-        <td><code>@gridColumnWidth</code></td>
-        <td>60px</td>
-        <td>Width of each column</td>
-      </tr>
-      <tr>
-        <td><code>@gridGutterWidth</code></td>
-        <td>20px</td>
-        <td>Negative space between columns</td>
-      </tr>
-      <tr>
-        <td><code>@siteWidth</code></td>
-        <td><em>Computed sum of all columns and gutters</em></td>
-        <td>Counts number of columns and gutters to set width of the <code>.container-fixed()</code> mixin</td>
-      </tr>
-    </tbody>
-  </table>
-  <div class="row">
-    <div class="span4">
-      <h3>Variables in LESS</h3>
-      <p>Built into Bootstrap are a handful of variables for customizing the default 940px grid system, documented above. All variables for the grid are stored in variables.less.</p>
-    </div>
-    <div class="span4">
-      <h3>How to customize</h3>
-      <p>Modifying the grid means changing the three <code>@grid*</code> variables and recompiling Bootstrap. Change the grid variables in variables.less and use one of the <a href="#compiling">four ways documented to recompile</a>. If you're adding more columns, be sure to add the CSS for those in grid.less.</p>
-    </div>
-    <div class="span4">
-      <h3>Staying responsive</h3>
-      <p>Customization of the grid only works at the default level, the 940px grid. To maintain the responsive aspects of Bootstrap, you'll also have to customize the grids in responsive.less.</p>
-    </div>
-  </div><!-- /row -->
-
 </section>
 
 
@@ -224,10 +151,7 @@
   </div>
   <!-- Supported devices -->
   <div class="row">
-    <div class="span4">
-      <img src="assets/img/responsive-illustrations.png" alt="Responsive devices">
-    </div>
-    <div class="span8">
+    <div class="span12">
       <h2>Supported devices</h2>
       <p>Bootstrap supports a handful of media queries to help make your projects more appropriate on different devices and screen resolutions. Here's what's included:</p>
       <table class="table table-bordered table-striped">

@@ -1,28 +1,3 @@
-<style>
-.the-icons {
-  margin-bottom: 18px;
-}
-.the-icons i {
-  display: block;
-  margin-bottom: 5px;
-}
-.the-icons i:hover {
-  background-color: rgba(255,0,0,.25);
-}
-.the-icons i:after {
-  display: block;
-  content: attr(class);
-  font-style: normal;
-  margin-left: 20px;
-  width: 140px;
-}
-#javascript input[type=checkbox] {
-  position: relative;
-  top: -1px;
-  display: inline;
-  margin-left: 6px;
-}
-</style>
    <div class="container">
 
 <!-- Masthead
@@ -856,7 +831,7 @@ For example, &lt;code&gt;section&lt;/code&gt; should be wrapped as inline.
           <div class="control-group">
             <label class="control-label" for="input01">Text input</label>
             <div class="controls">
-              <input type="text" class="input-xlarge" id="input01">
+              <input type="text" class="input-xlarge required" id="input01">
               <p class="help-block">In addition to freeform text, any HTML5 text-based input appears like so.</p>
             </div>
           </div>

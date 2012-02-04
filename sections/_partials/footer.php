@@ -1,7 +1,9 @@
 </section>
-<footer>
+<hr class="soften">
+<footer class="footer">
 	<div class="container">
-		<p>&copy; Company 2011</p>
+		<p class="pull-right"><a href="#">Back to top</a></p>
+		<p>&copy; <?=$config['base_title']." ".date("Y")?></p>
 	</div>
 </footer>
 </body>
