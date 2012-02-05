@@ -387,12 +387,6 @@ function make_link($options = array()) {
 function remove_leading_slash($str = '') {
 	return preg_replace('#^/#', '', $str);
 }
-function get_page_info($key = '') {
-	global $pageInfo;	
-	if (array_key_exists($key, $pageInfo)) return $pageInfo[$key];
-	else return false;
-}
-
 function set_page_info($key = '', $value = '') {
 	global $pageInfo;
 	return $pageInfo[$key] = $value;
@@ -606,21 +600,21 @@ function display_messages($msg=null) {
 	global $error;
 	global $notice;
 	if ($notice) {
-		echo '<div class="flashMessage"><p>'.$notice.'</p>';
+		echo '<div class="alert alert-block"><a class="close" data-dismiss="alert" href="#">×</a><h4 class="alert-heading">'.$notice.'</h4>';
 	}
 	if ($error) {
-		echo '<div class="flashMessage error"><p>'.$error.'</p>';
+		echo '<div class="alert alert-error alert-block"><a class="close" data-dismiss="alert" href="#">×</a><h4 class="alert-heading">'.$error.'</h4>';
 	}
 	if ($success) {
-		echo '<div class="flashMessage"><p>'.$success.'</p>';
+		echo '<div class="alert alert-success alert-block"><a class="close" data-dismiss="alert" href="#">×</a><h4 class="alert-heading">'.$success.'</h4>';
 	}
 	if ($msg)	echo '<p>'.$msg.'</p>';
 	echo '</div>';
 }
 
 function display_error($errors) {
-	echo('<<div class="flashMessage error">');
-	echo ("<p>Hold up!  There were some problems:</p>");
+	echo('<div class="alert alert-error alert-block"><a class="close" data-dismiss="alert" href="#">×</a>');
+	echo ('<h4 class="alert-heading">Hold up!  There were some problems:</h4>');
 	foreach ($errors as $err)	echo("<p>".$err . "</p>");
 	echo('</div>');
 }
