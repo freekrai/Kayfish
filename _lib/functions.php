@@ -571,9 +571,8 @@ function getDomain($url){
 	else return NULL;
 }
 function page_id() {
-	$path = htmlentities($_SERVER['PHP_SELF'], ENT_QUOTES);
-	$file = basename($path,".php");	
-	echo $file;	
+	global $section,$page;
+	echo $section."-".$page;	
 }
 function get_filepath() {
 	$path = htmlentities($_SERVER['PHP_SELF'], ENT_QUOTES);
