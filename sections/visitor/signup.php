@@ -36,44 +36,19 @@
 		</div>
 		<div class="row">
 			<div class="span16">
-				<form action="" method="post">
-				<fieldset>
-					<div class="clearfix">
-						<label style="text-align:left;width:30%;" for="username">Pick a Username</label>
-						<div class="input">
-							<input class="xlarge required" id="username" name="username" size="45" type="text">
-						</div>
-					</div><!-- /clearfix -->
-					<div class="clearfix">
-						<label style="text-align:left;width:30%;" for="email">What is your Email address</label>
-						<div class="input">
-							<input class="xlarge required" id="email" name="email" size="45" type="text">
-						</div>
-					</div><!-- /clearfix -->
-					<div class="clearfix">
-						<label style="text-align:left;width:30%;" for="name">What is Your name</label>
-						<div class="input">
-							<input class="xlarge required" id="name" name="name" size="45" type="text">
-						</div>
-					</div><!-- /clearfix -->
-					<div class="clearfix">
-						<label style="text-align:left;width:30%;" for="pass1">Password</label>
-						<div class="input">
-							<input class="xlarge required" id="pass1" name="pass1" size="45" type="password">
-						</div>
-					</div><!-- /clearfix -->
-					<div class="clearfix">
-						<label style="text-align:left;width:30%;" for="pass2">Confirm Password</label>
-						<div class="input">
-							<input class="xlarge required" id="pass2" name="pass2" size="45" type="password">
-						</div>
-					</div><!-- /clearfix -->
-					<div class="actions">
-						<input type="submit" class="btn primary" value="Signup">&nbsp;
-						<button type="reset" class="btn">Cancel</button>
-					</div>
-				</fieldset>
-				</form>
+<?php
+				$form = new kfforms("","post","","form-horizontal");
+				$form->section("");
+				$form->field("Pick a Username","username","text","xlarge required","",array(),"");
+				$form->field("What is your Email address","email","text","xlarge required","",array(),"");
+				$form->field("What is Your name","name","text","xlarge required","",array(),"");
+				$form->field("Password","pass1","password","xlarge required","",array(),"");
+				$form->field("Confirm Password","pass2","password","xlarge required","",array(),"");
+				$form->sectionbreak();
+				$form->buttons("Signup");
+				$form->end();
+				$form->html();
+?>
 			</div>
 		</div>
 	</div>

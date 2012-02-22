@@ -10,6 +10,7 @@
 	require_once('_lib/cache.class.php');
 	require_once('_lib/xmllogger.class.php');
 	require_once('_lib/db.class.php');
+	require_once('_lib/forms.class.php');
 //	require_once('_lib/posts.php');
 	date_default_timezone_set('America/Los_Angeles');
 	if (DEBUG) {
