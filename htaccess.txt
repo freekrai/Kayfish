@@ -73,8 +73,8 @@ RewriteEngine On
 RewriteBase /
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^([A-Za-z]+)/?$ index.php?section=$1&%{QUERY_STRING} [L]
-RewriteRule ^([A-Za-z]+)/([A-Za-z]+)/?$ index.php?section=$1&page=$2&%{QUERY_STRING} [L]
+RewriteRule ^([A-Za-z0-9-]+)/?$ index.php?section=$1&%{QUERY_STRING} [L]
+RewriteRule ^([A-Za-z0-9-]+)/([A-Za-z0-9-]+)/?$ index.php?section=$1&page=$2&%{QUERY_STRING} [L]
 
 AddCharset utf-8 .html .css .js .xml .json .rss
 ServerSignature Off
