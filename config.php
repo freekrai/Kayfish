@@ -4,8 +4,8 @@
 	define('FROM_EMAIL_ADDRESS', 'roger@freekrai.net');
 
 	$config['base_title'] = "KayFish";
-	$config['base_url'] = 'http://chaoscourt.com/';
-	$config['sections'] = array('visitor', 'api');
+	$config['base_url'] = 'http://yoursitehere.com/';
+	$config['sections'] = array('visitor');
 	$config['dbhost'] = "ENTER YOUR DB HOST";
 	$config['dbname'] = "ENTER YOUR DB NAME";
 	$config['dbuser'] = "ENTER YOUR DB USER";

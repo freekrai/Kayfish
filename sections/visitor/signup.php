@@ -27,7 +27,7 @@
 			display_messages();
 		}
 	}
-	set_page_info('title', "Sign Up On Textoad" );
+	set_page_info('title', "Sign Up" );
 ?>
 <div class="container">
 	<div class="content">
