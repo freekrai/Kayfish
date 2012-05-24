@@ -625,6 +625,35 @@ function display_error($errors) {
 }
 
 
+/*
+	Sometimes, you need to a outgoing connection..
+	get_query returns  
+*/
+function get_query($url){
+	$curl = curl_init($url);
+	curl_setopt($curl,CURLOPT_HEADER,false);
+	curl_setopt($curl,CURLOPT_RETURNTRANSFER,true);
+	$data = curl_exec($curl);
+	curl_close($curl);
+	return $data;
+}
+
+function post_query($url,$args){
+    $ch = curl_init();
+    $timeout=5;
+    curl_setopt($ch,CURLOPT_URL,$url);
+    curl_setopt($ch,CURLOPT_RETURNTRANSFER,1);
+    curl_setopt($ch,CURLOPT_CONNECTTIMEOUT,$timeout);
+    curl_setopt($ch, CURLOPT_POST, true);
+    
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $args);
+    $data = curl_exec($ch);
+    curl_close($ch);        
+    return $data;
+}
+
+
+
 function TimeAgoInWords($from_time, $include_seconds = true) {
   $to_time = time();
   $mindist = round(abs($to_time - $from_time) / 60);
