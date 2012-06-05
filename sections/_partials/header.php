@@ -37,6 +37,7 @@
 						<li class="active"><a href="/">Home</a></li>
 						<li><a href="/grid">Scaffolding</a></li>
 						<li><a href="/test">Components</a></li>
+						<li><a href="/table">Sortable Table</a></li>
 						<li><a href="/fluid">Fluid</a></li>
 						<li><a href="/blank">Start</a></li>						
 						<li class="dropdown">
