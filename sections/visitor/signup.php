@@ -35,7 +35,7 @@
 			<h1>Signup <small>Supporting text or tagline</small></h1>
 		</div>
 		<div class="row">
-			<div class="span16">
+			<div class="span12">
 <?php
 				$form = new kfforms("","post","","form-horizontal");
 				$form->section("");

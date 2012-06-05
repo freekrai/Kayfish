@@ -9,7 +9,7 @@
 			<h1>Sign In</h1>
 		</div>
 		<div class="row">
-			<div class="span16">
+			<div class="span12">
 				<form method="post">
 				<fieldset>
 					<div class="clearfix">

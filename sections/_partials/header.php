@@ -13,7 +13,7 @@
 	<link href="/assets/css/core.css" rel="stylesheet">
 	<link href="/assets/css/bootstrap-responsive.css" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-	<script src="http://autobahn.tablesorter.com/jquery.tablesorter.min.js"></script>
+	<script src="/assets/js/datatables.js"></script>
 	<script src="/assets/js/bootstrap.js"></script>
 	<script src="/assets/js/app.js"></script>
 	<link rel="shortcut icon" href="/assets/images/favicon.ico">
