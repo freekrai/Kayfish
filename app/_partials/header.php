@@ -11,6 +11,7 @@
 	<![endif]-->
 	<link href="/assets/css/bootstrap.css" rel="stylesheet">
 	<link href="/assets/css/core.css" rel="stylesheet">
+	<link href="/assets/css/app.css" rel="stylesheet">
 	<link href="/assets/css/bootstrap-responsive.css" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 	<script src="/assets/js/datatables.js"></script>
