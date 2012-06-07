@@ -5,7 +5,7 @@
 
 	$config['base_title'] = "KayFish";
 	$config['base_url'] = 'http://yoursitehere.com/';
-	$config['sections'] = array('visitor');
+	$config['sections'] = array('default');
 	$config['dbhost'] = "ENTER YOUR DB HOST";
 	$config['dbname'] = "ENTER YOUR DB NAME";
 	$config['dbuser'] = "ENTER YOUR DB USER";

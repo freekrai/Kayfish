@@ -264,24 +264,24 @@ function get_root_path() {
 
 function get_footer() {
 	global $config,$section;
-	$pagePath = "sections/{$section}/footer.php";
+	$pagePath = "app/{$section}/footer.php";
 	if( file_exists( $pagePath )){
 		include($pagePath);
 	}else{
-#		if (is_admin()) include('sections/admin/footer.php');
-		include('sections/_partials/footer.php');
+#		if (is_admin()) include('app/admin/footer.php');
+		include('app/_partials/footer.php');
 	}
 	exit;
 }
 
 function get_header() {
 	global $config,$section;
-	$pagePath = "sections/{$section}/header.php";
+	$pagePath = "app/{$section}/header.php";
 	if( file_exists( $pagePath )){
 		include($pagePath);
 	}else{
-#		if (is_admin()) include('sections/admin/header.php');
-		include('sections/_partials/header.php');
+#		if (is_admin()) include('app/admin/header.php');
+		include('app/_partials/header.php');
 	}
 }
 

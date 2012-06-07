@@ -9,13 +9,13 @@ This framework includes a user system already built in, you just upload the sql.
 		-	home of functional php files, try not to edit
 	-	assets/
 		-	where we place folders such as css, js and images
-	-	sections/
+	-	app/
 		-	here we build the core of the site.
 Setup:
 ------
 
--	Under sections:
-	-	create folders for each section your site will have, ideally, non-logged in pages go under visitor, but you can make whatever you want.
+-	Under app:
+	-	create folders for each section your site will have, ideally, non-logged in pages go under default, but you can make whatever you want.
 -	Open config.php
 	-	Edit the rest of config.php to have your info.
 -	Upload files

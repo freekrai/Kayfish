@@ -9,11 +9,6 @@
 					<table width=100% class="table table-striped table-bordered">
 					<thead>
 					<tr>
-						<th></th>
-						<th colspan="2">Full name</th>
-						<th></th>
-					</tr>
-					<tr>
 						<th>#</th>
 						<th>First Name</th>
 						<th>Last Name</th>
@@ -21,7 +16,6 @@
 					</tr>
 					</thead>
 					<tbody>
-					<tr></tr>
 					<tr>
 						<td>1</td>
 						<td>Mark</td>
@@ -36,7 +30,8 @@
 					</tr>
 					<tr>
 						<td>3</td>
-						<td colspan="2">Larry the Bird</td>
+						<td>Larry</td>
+						<td>the Bird</td>
 						<td>@twitter</td>
 					</tr>
 					</tbody>
