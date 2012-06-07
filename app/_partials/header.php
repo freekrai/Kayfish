@@ -15,6 +15,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 	<script src="/assets/js/datatables.js"></script>
 	<script src="/assets/js/bootstrap.js"></script>
+	<script src="/assets/js/core.js"></script>
 	<script src="/assets/js/app.js"></script>
 	<link rel="shortcut icon" href="/assets/images/favicon.ico">
 	<link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
@@ -35,21 +36,17 @@
 				<div class="nav-collapse">
 					<ul class="nav">
 						<li class="active"><a href="/">Home</a></li>
-						<li><a href="/grid">Scaffolding</a></li>
-						<li><a href="/test">Components</a></li>
-						<li><a href="/table">Sortable Table</a></li>
-						<li><a href="/fluid">Fluid</a></li>
-						<li><a href="/blank">Start</a></li>						
 						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">BootStrap Stuff <b class="caret"></b></a>
 							<ul class="dropdown-menu">
-								<li><a href="#">Action</a></li>
-								<li><a href="#">Another action</a></li>
-								<li><a href="#">Something else here</a></li>
+								<li><a href="/grid">Scaffolding</a></li>
+								<li><a href="/test">Components</a></li>
 								<li class="divider"></li>
-								<li><a href="#">Separated link</a></li>
+								<li><a href="/fluid">Fluid</a></li>
+								<li><a href="/blank">Start</a></li>						
 							</ul>
 						</li>
+						<li><a href="/table">Sortable Table</a></li>
 					</ul>
 					<form class="navbar-search pull-left" action="">
 						<input type="text" class="search-query span2" placeholder="Search">
