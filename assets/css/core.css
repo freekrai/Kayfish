@@ -303,6 +303,60 @@ table.dataTable th:active {
 	outline: none;
 }
 
+
+#fancy-list {
+	margin-bottom:60px;
+}
+#fancy-list .thumb {
+    width:60px;
+    height:60px;
+    float:left;
+    margin-right:20px;
+    border:solid 1px #333;
+}
+#fancy-list .list {
+    clear:both;
+    margin-bottom:10px;
+    list-style: none;
+}
+#fancy-list .list li {
+    padding:20px;
+    list-style: none;
+}
+#fancy-list li:nth-child(2n+1) {
+    background-color:rgba(0,0,0,.1);
+    border:solid 1px rgba(255,255,255,.1);
+    border-radius:10px;
+}
+#fancy-list li:nth-child(2n+1) .thumb {
+    border:solid 1px #666;
+}
+#fancy-list h4 {
+    color:#fafafa;
+    font-weight:bold;
+    margin-bottom:6px;
+}
+#fancy-list p {
+    font:normal 14px/1.3 'helvetica neue', helvetica, arial;
+    color:#aaa;
+    text-align: left;
+}
+#fancy-list .sort-by {
+    margin-bottom:10px;
+    width:100%;
+    float:left;
+    clear:both;
+}
+#fancy-list .filter {
+    margin-bottom:10px;
+    width:100%;
+    float:left;
+    clear:both;
+}
+
+/*
+Version: @@ver@@ Timestamp: @@timestamp@@
+*/
 .select2-container {
     position: relative;
     display: inline-block;
@@ -316,6 +370,12 @@ table.dataTable th:active {
 .select2-drop,
 .select2-search,
 .select2-container .select2-search input{
+  /* 
+    Force border-box so that % widths fit the parent
+    container without overlap because of margin/padding.
+    
+    More Info : http://www.quirksmode.org/css/box.html
+  */
   -moz-box-sizing: border-box;    /* firefox */
   -ms-box-sizing: border-box;     /* ie */
   -webkit-box-sizing: border-box; /* webkit */
@@ -698,7 +758,7 @@ disabled look for already selected choices in the results dropdown
   width: 12px;
   height: 13px;
   font-size: 1px;
-  background: url(select2.png) right top no-repeat;
+  background: url(../img/select2.png) right top no-repeat;
   outline: none;
 }
 

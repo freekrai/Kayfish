@@ -47,7 +47,13 @@
 								<li><a href="/blank">Start</a></li>						
 							</ul>
 						</li>
-						<li><a href="/table">Sortable Table</a></li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">KayFish coolness <b class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li><a href="/table">Sortable Table</a></li>
+								<li><a href="/lists">Sortable Lists</a></li>
+							</ul>
+						</li>
 					</ul>
 					<form class="navbar-search pull-left" action="">
 						<input type="text" class="search-query span2" placeholder="Search">
