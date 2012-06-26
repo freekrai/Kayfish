@@ -10,5 +10,5 @@
 	$config['dbname'] = "ENTER YOUR DB NAME";
 	$config['dbuser'] = "ENTER YOUR DB USER";
 	$config['dbpass'] = "ENTER YOUR DB PASS";
-	$config['hash'] = "md5";	//	can be: md5,none,bcrypt
+	$config['hash'] = "md5";	//	can be: md5,none,bcrypt or hash
 ?>
