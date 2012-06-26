@@ -91,7 +91,7 @@ function passhash($str){
 	switch($config['hash']){
 		case 'md5':		$str = md5($str);	break;
 		case 'bcrypt':	$str = Bcrypt::hash($str);	break;
-		case 'hash':	$str = md5(SECRET.sha1(md5($str));	break;	//	md5ed with a salt of an sha1 of an md5..
+		case 'hash':	$str = md5(SECRET.sha1(md5($str)));	break;	//	md5ed with a salt of an sha1 of an md5..
 		default:		$str = $str;	break;
 	}
 	return $str;
