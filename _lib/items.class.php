@@ -45,13 +45,14 @@ class items {
 		return $this->query = $query;
 	}
 	function executeQuery() {
-		$result = mysql_query($this->query,DBH);
+		global $kfdb;
+		$result = mysqli_query($kfdb->conn,$this->query);
 		if ($result !== false) {
 			if ($this->getOption('class') != '' && $this->getOption('class') != 'stdClass') {
 				$file = '_lib/'.$this->getOption('class').'.class.php';
 				if (file_exists($file)) include_file($file);
 			}
-			while($item = mysql_fetch_object($result, $this->getOption('class'))) {
+			while($item = mysqli_fetch_object($result, $this->getOption('class'))) {
 				$this->items[] = $item;
 			}
 			if ($this->total <= 0) $this->total = count($this->items);
