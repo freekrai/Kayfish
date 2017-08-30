@@ -13,11 +13,6 @@ class items {
 	var $pagination;
 	var $items;
 	var $total;
-	
-	function items($options = array()) {
-		$this->__construct($options);
-	}
-	
 	function __construct($options = array()) {
 		global $kfdb;
 		
@@ -46,7 +41,7 @@ class items {
 	}
 	function executeQuery() {
 		global $kfdb;
-		$result = mysqli_query($kfdb->conn,$this->query);
+		$result = mysqli_query($kfdb->conn, $this->query);
 		if ($result !== false) {
 			if ($this->getOption('class') != '' && $this->getOption('class') != 'stdClass') {
 				$file = '_lib/'.$this->getOption('class').'.class.php';
@@ -233,4 +228,3 @@ if (!function_exists('get_global')) {
 		return (!empty($variable[$key])) ? clean($variable[$key]) : '';
 	}
 }
-?>
